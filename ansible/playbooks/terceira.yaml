@@ -1,0 +1,38 @@
+---
+
+- name: Segunda playbook
+  hosts: all
+
+  tasks:
+    - name: Configurando hosts das maquinas
+      blockinfile:
+        path: /etc/hosts
+        block: |
+          192.168.33.150 devops devops.dexter.com.br
+          192.168.33.151 automation automation.dexter.com.br
+          192.168.33.152 docker docker.dexter.com.br
+
+
+- name: Nome devops
+  hosts: devops
+
+  tasks:
+    - name: Configurando nome devops 
+      hostname:
+        name: devops
+
+- name: Nome automation
+  hosts: automation
+
+  tasks:
+    - name: Configurando nome automation
+      hostname:
+        name: automation
+
+- name: Nome docker
+  hosts: docker
+
+  tasks:
+    - name: Configurando nome docker
+      hostname:
+        name: docker

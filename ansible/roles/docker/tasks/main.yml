@@ -1,0 +1,12 @@
+---
+
+- name: baixar script
+  get_url:
+    url: https://get.docker.com
+    dest: /tmp/docker.sh 
+
+
+- name: executar script
+  script: /tmp/docker.sh
+
+

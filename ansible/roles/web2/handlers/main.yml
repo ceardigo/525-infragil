@@ -1,0 +1,14 @@
+---
+
+- name: start apache centos
+  service:
+    name: "{{apache_centos}}"
+    state: started
+
+- name: disable firewalld
+  service:
+    name: disable firewalld
+    state: stopped
+  ignore_errors: yes
+
+

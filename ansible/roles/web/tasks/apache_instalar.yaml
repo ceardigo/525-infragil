@@ -1,0 +1,14 @@
+---
+
+- name: instalando pacote
+  package: 
+    name: "{{pacote_apache}}"
+  state: present
+
+
+#- name: instalando pacote
+#  package:
+#    name: httpd
+#  state: present
+#  when: ansible_os_family == "RedHat"
+

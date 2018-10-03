@@ -1,0 +1,6 @@
+---
+
+- name: instalando meu site devops
+  hosts: all
+  roles:
+    - web2

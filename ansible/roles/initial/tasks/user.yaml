@@ -1,0 +1,11 @@
+---
+
+- name: Criando os usuarios padroes
+  user:
+    name: "{{item.nome}}"
+    password: "{{item.senha}}"
+    home: "/srv/{{item.nome}}"
+  with_items:
+    - {nome: carlos, senha: '$1$NzPR4avH$KG5N6djjypoj8pjHYkOCz/' }
+    - {nome: developer, senha: '$1$NzPR4avH$KG5N6djjypoj8pjHYkOCz/' }
+    - {nome: devops, senha: '$1$NzPR4avH$KG5N6djjypoj8pjHYkOCz/' }

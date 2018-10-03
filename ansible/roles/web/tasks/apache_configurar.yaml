@@ -1,0 +1,21 @@
+---
+
+- name: copiando index.html
+  template:
+    src: templates/index
+    dest: /var/www/html/index.html
+#  copy: 
+#    src: /etc/ansible/roles/web/files/index.html
+#    dest: /var/www/html/
+
+- name: liberando firewall
+  firewalld: 
+    state: enabled
+    port: 80
+  when: ansible_os_family == "RedHat"
+  ignore_errors: yes
+
+- name: iniciando servidor
+  service:
+    name: "{{pacote_apache}}"
+    state: started

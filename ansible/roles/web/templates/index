@@ -1,0 +1,6 @@
+  <h1>
+    familia da maquina  = {{ansible_os_family}}
+    <br />
+    hostname da maquina = {{ansible_hostname}}
+  </h1>
+

@@ -1,0 +1,39 @@
+---
+
+- name: Segunda playbook
+  hosts: all
+  vars: 
+    usuarios:
+      - developer
+      - devops
+      - carlos
+    pacotes:
+      - vim
+      - htop
+      - sl
+      - cowsay
+    pacotes_centos:
+      - epel-release
+
+  tasks:
+    - name: Criando usuarios
+      user:
+        name: "{{item}}"
+        state: present
+      loop: "{{usuarios}}"
+
+    - name: Adicionando repositorio EPEL no CentOS
+      yum:
+        name: "{{item}}"
+      loop: "{{pacotes_centos}}"
+      when: ansible_distribution == 'CentOS'
+
+
+    - name: Instalando aplicacoes
+      package:
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      loop: "{{pacotes}}"
+      ignore_errors: false
+

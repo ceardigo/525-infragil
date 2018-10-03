@@ -1,0 +1,17 @@
+---
+
+- name: instalando debian
+  package: 
+    name: "{{apache_debian}}"
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: instralando centos
+  package:
+    name: "{{apache_centos}}"
+    state: present
+  notify:
+    - start apache centos
+    - disable firewalld
+  when: ansible_os_family == "RedHat"
+

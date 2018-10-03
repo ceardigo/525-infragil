@@ -1,0 +1,9 @@
+---
+- name: Adicionar repositorios
+  include: puppet_repositorios.yaml
+
+- name: Instalando puppet server
+  include: puppet_server.yaml
+
+- name: Instalando puppet agent
+  include: puppet_agent.yaml

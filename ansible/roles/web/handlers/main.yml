@@ -1,0 +1,6 @@
+---
+- name: iniciar apache
+  service: 
+    name: "{{pacote_apache}}"
+    state: started
+

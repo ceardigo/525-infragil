@@ -1,0 +1,20 @@
+---
+
+- name: Incluindo variaveis para Centos
+  include_vars:
+    file: centos.yaml
+  when: ansible_os_family == "RedHat"
+
+- name: Incluindo variaveis para Debian
+  include_vars:
+    file: debian.yaml
+  when: ansible_os_family == "Debian"
+
+
+
+- name: Instalar apache
+  include: apache_instalar.yaml
+
+
+- name: Configurar apache
+  include: apache_configurar.yaml

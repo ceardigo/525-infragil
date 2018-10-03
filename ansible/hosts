@@ -1,0 +1,8 @@
+[automation]
+192.168.33.150 hostnamenovo=automation.dexter.com.br
+
+[docker]
+192.168.33.152 hostnamenovo=docker.dexter.com.br
+
+[devops]
+192.168.33.151 hostnamenovo=devops.dexter.com.br

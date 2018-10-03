@@ -1,0 +1,7 @@
+---
+
+- name: Instalando e configurando servidor apache
+  hosts: all
+  roles:
+    - web
+ 

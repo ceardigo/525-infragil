@@ -1,0 +1,15 @@
+---
+
+- name: Quarta playbook
+  hosts: all
+  tasks:
+    - name: testando se um arquivo existe
+      command: "test -f /etc/profile.d/dexter"
+      register: resultado
+      ignore_errors: yes
+
+    - name: configurando uma variavel do sistema
+      shell: echo "export DEXTER=/opt/dexter > /etc/profile.d/dexter"
+      when: resultado.rc == 0
+
+ 

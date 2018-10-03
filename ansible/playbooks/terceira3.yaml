@@ -1,0 +1,9 @@
+---
+
+- name: Nome automation
+  hosts: all
+
+  tasks:
+    - name: Configurando nome automation
+      hostname:
+        name: "{{hostnamenovo}}"
